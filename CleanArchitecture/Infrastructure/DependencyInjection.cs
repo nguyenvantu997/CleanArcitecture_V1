@@ -34,6 +34,7 @@ namespace Infrastructure
 
             // services
             services.AddTransient<IUserManagerService, UserManagerService>();
+            services.AddScoped<IUser, CurrentUser>();
 
             // repo
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));

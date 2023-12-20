@@ -37,7 +37,7 @@ namespace Infrastructure.Repositories
         public virtual T Add(T t)
         {
             this.entities.Add(t);
-            this.context.SaveChanges();
+            //this.context.SaveChanges();
             return t;
         }
 
@@ -88,7 +88,7 @@ namespace Infrastructure.Repositories
         public virtual void Delete(T entity)
         {
             this.entities.Remove(entity);
-            this.context.SaveChanges();
+            //this.context.SaveChanges();
         }
 
         public virtual bool Delete(params object[] id)
@@ -97,7 +97,7 @@ namespace Infrastructure.Repositories
             if (router != null)
             {
                 this.entities.Remove(router);
-                this.context.SaveChanges();
+                // this.context.SaveChanges();
                 return true;
             }
 
@@ -110,7 +110,7 @@ namespace Infrastructure.Repositories
 
             //int res = await this.context.SaveChangesAsync();
 
-           // return res > 0;
+            // return res > 0;
         }
 
         public virtual T Update(T t, params object[] key)
@@ -124,7 +124,7 @@ namespace Infrastructure.Repositories
             if (exist != null)
             {
                 this.context.Entry(exist).CurrentValues.SetValues(t);
-                this.context.SaveChanges();
+                //this.context.SaveChanges();
             }
 
             return exist;
